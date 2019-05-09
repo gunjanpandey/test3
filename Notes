@@ -31,3 +31,25 @@ plate row column value
 Packages function conflicts
 In case of conflickts R would use the most recent lodaded package.
 To force it for a particular function use the package name -> base::stat
+
+select(data, arguments)
+  arguments could be
+    column names, 
+    column numbers
+    ranges
+    -sign to remove
+    start_with
+    end_with
+    contains etc
+    
+Renaming coulumn 
+  select(data, new_name = old_name) #it will give you only remaned column back
+  rename(data, new_name = old_name)
+  
+Fixing all column look package "janitor"
+
+Filtering rows
+  filter(data, column_head "column_value_to_be_Filtered" mathematical_function column_head "column_value_to_be_Filtered")
+  
+filter(gapminder, continent %in% c("Africa", "Asia", "Europe"))
+ 

@@ -17,3 +17,33 @@ gapminder$country
 
 #unique 
 unique(gapminder$country)
+
+
+
+
+
+#to read continents as a factor (to be used in stastics)
+#value of each "factor" is a number in the backend.  
+gapminder_factor <- read_csv("raw_data/gapminder.csv", col_types = cols(continent = col_factor()))
+
+#storms is an inbuild dataset for tidyverse
+View(storms)
+dim(storms)
+
+#category is an ordeal factor such as 0>1>2>3>4 but it doesnt have to be a number it could be "low mid and high" and so on
+
+#select(data, arguments)
+  #column names, 
+  #column numbers
+  #ranges
+  #-sign to remove
+  #start_with
+  #end_with
+  #contains etc 
+select(gapminder, "country", "year")
+
+#filter_rows
+filter(gapminder, lifeExp > "60" & continent == "Europe" & year >= "1972")
+
+
+filter(gapminder, continent %in% c("Africa", "Asia", "Europe"))
