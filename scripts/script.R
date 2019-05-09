@@ -43,7 +43,17 @@ dim(storms)
 select(gapminder, "country", "year")
 
 #filter_rows
-filter(gapminder, lifeExp > "60" & continent == "Europe" & year >= "1972")
-
-
+filter(gapminder, lifeExp > "60" & continent == "Asia" & year >= "1972")
 filter(gapminder, continent %in% c("Africa", "Asia", "Europe"))
+
+#add or remove new columns using mutate
+#create a new column called gdp by multiplying gdpPercep by pop
+mutate(gapminder, gdp = gdpPercap * pop)
+#create a new column to calculate the polupations in millions
+mutate(gapminder, popMillion = pop/10000)
+mutate(gapminder, popMillion = log(pop))
+
+#to pull string from value of a column to a new column (to pull variables from a sample name)
+mutate(gapminder, country_abbr = str_sub(country, start = 1, end = 4))
+#using "-" minus sign, it would start from the end of the string
+mutate(gapminder, country_end_letter = str_sub(country, start = -1))
