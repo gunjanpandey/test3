@@ -65,3 +65,13 @@ mutate(gapminder, country_abbr = str_sub(country, start = 1, end = 4))
 #using "-" minus sign, it would start from the end of the string
 mutate(gapminder, country_end_letter = str_sub(country, start = -1))
 
+Group_by
+summarise(gapminder, mean_pop = mean(pop), median_pop = median(pop))
+summarise(gapminder_by_country, mean_LE = mean(lifeExp), median_LE = median(lifeExp))
+
+#Summarise and Grouping
+#Calculate meand and median for the population for the gapminder dataframe
+summarise(gapminder, mean_pop = mean(pop), median_pop = median(pop))
+
+pipe
+filter(gapminder, country == "Australia") %>% select(., "country", "year" , "pop")

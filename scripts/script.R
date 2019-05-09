@@ -57,3 +57,16 @@ mutate(gapminder, popMillion = log(pop))
 mutate(gapminder, country_abbr = str_sub(country, start = 1, end = 4))
 #using "-" minus sign, it would start from the end of the string
 mutate(gapminder, country_end_letter = str_sub(country, start = -1))
+
+
+mutate(
+  gapminder, lifeExp_days = lifeExp * 365,
+  gdp_billion = (gdpPercap * pop)/1e9
+)
+
+#Offset functions -> lag()or lead() to coy values a row up or down
+#cumsum(), 
+summarise(gapminder, mean_pop = mean(pop), median_pop = median(pop))
+summarise(gapminder_by_country, mean_LE = mean(lifeExp), median_LE = median(lifeExp))
+
+
