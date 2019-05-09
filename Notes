@@ -1,0 +1,33 @@
+Functions - 
+1. seq() generates numbers from 
+2. typeof() for details of the variable
+3. starting a variable with "." makes it hidden
+4. NA is not available. is.na 
+    * The generic function is.na indicates which elements are missing.
+    * The generic function is.na<- sets elements to NA.
+
+
+Vector is a set of one type of data (numbers or letters)
+
+for help -      > ?ls         e.g. ?function
+                > ??model     to find a particular function??model
+                > vignette is for help in the whole package
+                > vignette(package = "tidyverse")
+                > vignette("manifesto", "tidyverse")
+                * www.cran.csiro.au CRAN Task Views to find package of interest
+                * search google for help with the package name. 
+                * www.stackoverflow.com search box -> "[R] change point color on R ggplot"
+
+A tidy table
+  1. Each variable in the data set is placed in its own column
+  2. Each observation is placed in its own row
+  3. Each value is placed in its own cell
+  
+  
+A tidy table  header from a 96 well plate date. 
+plate row column value
+
+
+Packages function conflicts
+In case of conflickts R would use the most recent lodaded package.
+To force it for a particular function use the package name -> base::stat
